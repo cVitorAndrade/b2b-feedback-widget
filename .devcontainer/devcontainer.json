@@ -1,0 +1,54 @@
+{
+  "name": "Bug Tracker (Monorepo)",
+  "dockerComposeFile": "../docker-compose.yml",
+
+  "service": "workspace",
+
+  "workspaceFolder": "/app",
+  "shutdownAction": "stopCompose",
+
+  "forwardPorts": [3000, 3001, 3002, 5173, 5174],
+
+  "remoteUser": "node",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "prisma.prisma",
+        "bradlc.vscode-tailwindcss",
+        "styled-components.vscode-styled-components",
+        "eamodio.gitlens",
+        "ms-azuretools.vscode-docker",
+        "ms-vscode-remote.remote-containers",
+        "rangav.vscode-thunder-client",
+        "christian-kohler.path-intellisense",
+        "formulahendry.auto-rename-tag",
+        "naumovs.color-highlight"
+      ],
+      "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "eslint.format.enable": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "explicit"
+        },
+        "editor.tabSize": 2,
+        "files.autoSave": "afterDelay",
+        "diffEditor.ignoreTrimWhitespace": false,
+        "explorer.fileNesting.patterns": {
+          "*.ts": "${capture}.js",
+          "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+          "*.jsx": "${capture}.js",
+          "*.tsx": "${capture}.ts",
+          "tsconfig.json": "tsconfig.*.json",
+          "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb"
+        }
+      }
+    }
+  },
+
+  "postCreateCommand": "pnpm install"
+}

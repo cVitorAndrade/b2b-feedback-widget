@@ -1,0 +1,17 @@
+services:
+  workspace:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - .:/app
+      - pnpm_store:/tmp/pnpm-store
+    networks:
+      - app_dev_net
+    command: sleep infinity
+
+volumes:
+  pnpm_store: {}
+
+networks:
+  app_dev_net:

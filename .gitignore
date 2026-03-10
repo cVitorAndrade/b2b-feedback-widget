@@ -1,0 +1,44 @@
+# 📦 Dependências (Workspace & Apps)
+node_modules/
+.pnpm-store/
+.pnp
+.pnp.js
+
+# 🏗️ Build Outputs & Caches (Next.js, Vite, TS, Turbo)
+.next/
+out/
+build/
+dist/
+.turbo/
+*.tsbuildinfo
+
+# 🐳 Docker & Banco de Dados (EVITA CONGELAMENTOS)
+pgdata/
+postgres-data/
+db-data/
+.docker/
+docker-data/
+
+# 🔐 Variáveis de Ambiente
+.env
+.env.*
+!.env.example
+
+# 🧪 Testes
+coverage/
+
+# ☁️ Vercel / Cloud
+.vercel/
+
+# 📝 Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 💻 Sistema Operacional e IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/tasks.json
+.vscode/workspace.json
